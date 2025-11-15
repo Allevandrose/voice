@@ -119,7 +119,7 @@ wss.on("connection", (clientWs) => {
   });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 server.listen(PORT, () => {
   console.log(`✅ Secure Deepgram proxy running on ws://localhost:${PORT}/ws`);
   console.log(`📁 Serving static files from /public`);

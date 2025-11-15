@@ -182,7 +182,7 @@
         mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
         // Connect to YOUR secure proxy
-        ws = new WebSocket('ws://localhost:5000/ws');
+        ws = new WebSocket('ws://localhost:10000/ws');
 
         ws.onopen = () => {
           console.log('✅ Connected to local proxy');
