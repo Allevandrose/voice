@@ -181,8 +181,10 @@
         // Get mic access
         mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
-        // Connect to YOUR secure proxy
-        ws = new WebSocket('ws://localhost:10000/ws');
+        // Auto-detect protocol (ws:// or wss://) and host
+        const wsProtocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+        const wsUrl = `${wsProtocol}://${window.location.host}/ws`;
+        ws = new WebSocket(wsUrl);
 
         ws.onopen = () => {
           console.log('✅ Connected to local proxy');
